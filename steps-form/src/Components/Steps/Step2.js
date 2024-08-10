@@ -5,7 +5,12 @@ import Buttons from "../Buttons";
 const Step2 = ({ formData, errors, handleChange, nextStep, prevStep }) => {
   const handleNext = (e) => {
     e.preventDefault();
-    if (formData.address1 && formData.city && formData.state && formData.zip) {
+    if (
+      formData.address1 &&
+      formData.city &&
+      formData.state &&
+      formData.zipcode
+    ) {
       nextStep();
     } else {
       alert("Please fill all fields");
@@ -57,8 +62,13 @@ const Step2 = ({ formData, errors, handleChange, nextStep, prevStep }) => {
             type="text"
             className="form-control"
             value={formData.zipcode}
-            onChange={handleChange("zip")}
+            onChange={handleChange("zipcode")}
           />
+          {!/^\d{6}$/.test(formData.zipcode) && formData.zipcode && (
+            <small className="text-danger">
+              zipcode must contain 6 digits.
+            </small>
+          )}
         </div>
         <Buttons step={2} handleNext={handleNext} handlePrev={prevStep} />
       </form>

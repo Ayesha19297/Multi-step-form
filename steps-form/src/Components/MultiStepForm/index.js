@@ -32,6 +32,23 @@ const MultiStepForm = () => {
     localStorage.setItem("formData", JSON.stringify(updatedFormData));
   };
 
+  const handleFinish = (e) => {
+    e.preventDefault();
+        alert("Form submitted successfully");
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      address1: "",
+      address2: "",
+      city: "",
+      state: "",
+      zipcode: "",
+    });
+    setStep(1);
+    localStorage.removeItem("formData");
+  };
+
   const renderStepsIndicator = () => {
     const steps = [
       "Fill in your details",
@@ -73,7 +90,7 @@ const MultiStepForm = () => {
             prevStep={prevStep}
           />
         )}
-        {step === 3 && <Step3 formData={formData} prevStep={prevStep} />}
+        {step === 3 && <Step3 formData={formData} prevStep={prevStep} handleFinish={handleFinish} />}
       </div>
     </div>
   );

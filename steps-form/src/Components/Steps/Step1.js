@@ -8,7 +8,7 @@ const Step1 = ({ formData, errors, handleChange, nextStep }) => {
         if (validateForm()) {
           nextStep();
         } else {
-          alert('Please ensure all fields are valid');
+          alert('Please fill all the details');
         }
       };
       const validateForm = () => {

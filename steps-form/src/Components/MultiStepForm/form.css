@@ -3,10 +3,12 @@
 }
 .multi-step-form {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
+  /* background-color: #e2e1e1; */
+  font-family: "Times New Roman", Times, serif;
 }
 
 .steps-indicator {
@@ -59,8 +61,4 @@
 .btn:disabled {
   background-color: #ccc;
   cursor: not-allowed;
-}
-
-.submit-btn {
-  background-color: #28a745;
 }

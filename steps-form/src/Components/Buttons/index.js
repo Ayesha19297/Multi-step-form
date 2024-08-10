@@ -1,6 +1,6 @@
 import React from "react";
 
-const Buttons = ({ step, handleNext, handlePrev, handleSubmit }) => {
+const Buttons = ({ step, handleNext, handlePrev, handleFinish }) => {
   return (
     <div className="d-flex justify-content-between mt-3">
       {step === 1 && (
@@ -18,7 +18,7 @@ const Buttons = ({ step, handleNext, handlePrev, handleSubmit }) => {
           Next
         </button>
       ) : (
-        <button className="btn btn-success" onClick={handleSubmit}>
+        <button className="btn btn-success" onClick={handleFinish}>
           Finish
         </button>
       )}

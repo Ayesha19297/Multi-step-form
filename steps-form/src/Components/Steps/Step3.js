@@ -2,14 +2,14 @@ import Buttons from "../Buttons";
 import "./steps.css";
 import React from "react";
 
-const Step3 = ({ formData, prevStep }) => {
-  const handleFinish = (e) => {
-    e.preventDefault();
-    setTimeout(() => {
-      alert("Form submitted successfully");
-      localStorage.removeItem("formData");
-    }, 1000);
-  };
+const Step3 = ({formData, prevStep , handleFinish}) => {
+//   const handleFinish = (e) => {
+//     e.preventDefault();
+//     setTimeout(() => {
+//       alert("Form submitted successfully");
+//       localStorage.removeItem("formData");
+//     }, 1000);
+//   };
 
   return (
     <div>
@@ -26,10 +26,10 @@ const Step3 = ({ formData, prevStep }) => {
         <p>Address Line 2: {formData.address2}</p>
         <p>City: {formData.city}</p>
         <p>State: {formData.state}</p>
-        <p>Zip Code: {formData.zip}</p>
+        <p>Zip Code: {formData.zipcode}</p>
       </div>
       <div>
-        <Buttons step={3} handlePrev={prevStep} handleSubmit={handleFinish} />
+        <Buttons step={3} handlePrev={prevStep} handleFinish={handleFinish} />
       </div>
     </div>
   );
