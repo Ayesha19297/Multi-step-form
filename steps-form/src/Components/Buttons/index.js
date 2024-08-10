@@ -1,8 +1,13 @@
-import React from 'react';
+import React from "react";
 
 const Buttons = ({ step, handleNext, handlePrev, handleSubmit }) => {
   return (
     <div className="d-flex justify-content-between mt-3">
+      {step === 1 && (
+        <button className="btn btn-secondary" disabled>
+          Back
+        </button>
+      )}
       {step > 1 && (
         <button className="btn btn-secondary" onClick={handlePrev}>
           Back
@@ -14,7 +19,7 @@ const Buttons = ({ step, handleNext, handlePrev, handleSubmit }) => {
         </button>
       ) : (
         <button className="btn btn-success" onClick={handleSubmit}>
-          Submit
+          Finish
         </button>
       )}
     </div>

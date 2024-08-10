@@ -1,72 +1,67 @@
 import React from "react";
-import Form from "react-bootstrap/Form";
 import "./steps.css";
 import Buttons from "../Buttons";
 
 const Step2 = ({ formData, errors, handleChange, nextStep, prevStep }) => {
-    const handleNext = e => {
-        e.preventDefault();
-        if (formData.address1 && formData.city && formData.state && formData.zip) {
-          nextStep();
-        } else {
-          alert('Please fill in all fields');
-        }
-      };
+  const handleNext = (e) => {
+    e.preventDefault();
+    if (formData.address1 && formData.city && formData.state && formData.zip) {
+      nextStep();
+    } else {
+      alert("Please fill all fields");
+    }
+  };
   return (
     <div className="main">
-      <h1>Address Information</h1>
-      <Form className="form">
-        <Form.Group className="mb-3" controlId="AddressLine1">
-          <Form.Label>Address Line 1:</Form.Label>
-          <Form.Control
+      <form>
+        <h2>Step 2: Address Information</h2>
+        <div className="form-group">
+          <label>Address Line 1</label>
+          <input
             type="text"
-            placeholder="Enter Address Line1"
+            className="form-control"
             value={formData.address1}
-            onChange={(e) => handleChange("address1", e.target.value)}
+            onChange={handleChange("address1")}
           />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="AddressLine2">
-          <Form.Label>Address Line 2:</Form.Label>
-          <Form.Control
+        </div>
+        <div className="form-group">
+          <label>Address Line 2</label>
+          <input
             type="text"
-            placeholder="Enter Address Line2"
+            className="form-control"
             value={formData.address2}
-            onChange={(e) => handleChange("address2", e.target.value)}
+            onChange={handleChange("address2")}
           />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="City">
-          <Form.Label>City:</Form.Label>
-          <Form.Control
+        </div>
+        <div className="form-group">
+          <label>City</label>
+          <input
             type="text"
-            placeholder="Enter City"
+            className="form-control"
             value={formData.city}
-            onChange={(e) => handleChange("city", e.target.value)}
+            onChange={handleChange("city")}
           />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="State">
-          <Form.Label>State:</Form.Label>
-          <Form.Control
+        </div>
+        <div className="form-group">
+          <label>State</label>
+          <input
             type="text"
-            placeholder="Enter State"
+            className="form-control"
             value={formData.state}
-            onChange={(e) => handleChange("state", e.target.value)}
+            onChange={handleChange("state")}
           />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="Zipcode">
-          <Form.Label>Zip code:</Form.Label>
-          <Form.Control
-            type="number"
-            placeholder="Enter Zip code"
-            value={formData.zip}
-            onChange={(e) => handleChange("zip", e.target.value)}
-           />
-        </Form.Group>
+        </div>
+        <div className="form-group">
+          <label>Zip Code</label>
+          <input
+            type="text"
+            className="form-control"
+            value={formData.zipcode}
+            onChange={handleChange("zip")}
+          />
+        </div>
         <Buttons step={2} handleNext={handleNext} handlePrev={prevStep} />
-      </Form>
+      </form>
     </div>
   );
 };

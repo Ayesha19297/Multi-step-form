@@ -1,3 +1,66 @@
-.main{
-    text-align: center;
+.main {
+  text-align: center;
+}
+.multi-step-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.steps-indicator {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.step-item {
+  text-align: center;
+}
+
+.step-number {
+  font-size: 1.5rem;
+  color: #777;
+}
+
+.step-title {
+  display: block;
+  margin-top: 8px;
+  font-weight: 500;
+  color: #777;
+}
+
+.step-item.active .step-number {
+  color: #007bff;
+}
+
+.step-item.active .step-title {
+  color: #007bff;
+}
+
+.form-content {
+  margin-bottom: 20px;
+}
+
+.buttons {
+  text-align: right;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.submit-btn {
+  background-color: #28a745;
 }

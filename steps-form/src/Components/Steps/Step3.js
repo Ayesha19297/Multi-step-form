@@ -3,16 +3,17 @@ import "./steps.css";
 import React from "react";
 
 const Step3 = ({ formData, prevStep }) => {
-  const handleSubmit = (e) => {
+  const handleFinish = (e) => {
     e.preventDefault();
     setTimeout(() => {
       alert("Form submitted successfully");
       localStorage.removeItem("formData");
     }, 1000);
   };
+
   return (
     <div>
-      <h2>Confirmation</h2>
+      <h2>Confirm the details:</h2>
       <div>
         <h3>Personal Information</h3>
         <p>Name: {formData.name}</p>
@@ -27,7 +28,9 @@ const Step3 = ({ formData, prevStep }) => {
         <p>State: {formData.state}</p>
         <p>Zip Code: {formData.zip}</p>
       </div>
-      <Buttons step={3} handlePrev={prevStep} handleSubmit={handleSubmit} />
+      <div>
+        <Buttons step={3} handlePrev={prevStep} handleSubmit={handleFinish} />
+      </div>
     </div>
   );
 };
