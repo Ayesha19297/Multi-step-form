@@ -51,11 +51,13 @@ const MultiStepForm = () => {
 
   const renderStepsIndicator = () => {
     const steps = [
-      "Fill in your details",
+      "Basic details",
       "Address details",
       "Review and Save",
     ];
     return (
+        <>
+        <h3>Fill in the details given below</h3>
       <div className="steps-indicator">
         {steps.map((title, index) => (
           <div
@@ -67,6 +69,7 @@ const MultiStepForm = () => {
           </div>
         ))}
       </div>
+      </>
     );
   };
 

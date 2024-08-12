@@ -14,19 +14,16 @@ const Step3 = ({formData, prevStep , handleFinish}) => {
   return (
     <div>
       <h2>Confirm the details:</h2>
-      <div>
-        <h3>Personal Information</h3>
-        <p>Name: {formData.name}</p>
-        <p>Email: {formData.email}</p>
-        <p>Phone: {formData.phone}</p>
-      </div>
-      <div>
-        <h3>Address Information</h3>
-        <p>Address Line 1: {formData.address1}</p>
-        <p>Address Line 2: {formData.address2}</p>
-        <p>City: {formData.city}</p>
-        <p>State: {formData.state}</p>
-        <p>Zip Code: {formData.zipcode}</p>
+      <hr />
+      <div className="display">
+        <p><strong>Name:</strong> {formData.name}</p>
+        <p><strong>Email:</strong> {formData.email}</p>
+        <p><strong>Phone:</strong> {formData.phone}</p>
+        <p><strong>Address Line 1:</strong> {formData.address1}</p>
+        <p><strong>Address Line 2:</strong> {formData.address2}</p>
+        <p><strong>City:</strong> {formData.city}</p>
+        <p><strong>State:</strong> {formData.state}</p>
+        <p><strong>Zip Code:</strong> {formData.zipcode}</p>
       </div>
       <div>
         <Buttons step={3} handlePrev={prevStep} handleFinish={handleFinish} />

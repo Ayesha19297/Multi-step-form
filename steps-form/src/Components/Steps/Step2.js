@@ -21,7 +21,7 @@ const Step2 = ({ formData, errors, handleChange, nextStep, prevStep }) => {
       <form>
         <h2>Step 2: Address Information</h2>
         <div className="form-group">
-          <label>Address Line 1</label>
+          <label>Address Line 1:</label>
           <input
             type="text"
             className="form-control"
@@ -30,7 +30,7 @@ const Step2 = ({ formData, errors, handleChange, nextStep, prevStep }) => {
           />
         </div>
         <div className="form-group">
-          <label>Address Line 2</label>
+          <label>Address Line 2:</label>
           <input
             type="text"
             className="form-control"
@@ -39,7 +39,7 @@ const Step2 = ({ formData, errors, handleChange, nextStep, prevStep }) => {
           />
         </div>
         <div className="form-group">
-          <label>City</label>
+          <label>City:</label>
           <input
             type="text"
             className="form-control"
@@ -48,7 +48,7 @@ const Step2 = ({ formData, errors, handleChange, nextStep, prevStep }) => {
           />
         </div>
         <div className="form-group">
-          <label>State</label>
+          <label>State:</label>
           <input
             type="text"
             className="form-control"
@@ -57,7 +57,7 @@ const Step2 = ({ formData, errors, handleChange, nextStep, prevStep }) => {
           />
         </div>
         <div className="form-group">
-          <label>Zip Code</label>
+          <label>Zip Code:</label>
           <input
             type="text"
             className="form-control"

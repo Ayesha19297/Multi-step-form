@@ -1,12 +1,19 @@
 .main {
   display: inline-block;
   text-align: justify;
-  margin: 20px;
-  padding: 20px;
+  margin: 10px;
+  padding: 10px;
 }
 .main form {
   display: flex;
   justify-content: center;
   flex-direction: column;
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-group{
+    padding:10px;
+    font-size: 1.3rem;
+}
+.display{
+    font-size: 1.5rem;
 }
