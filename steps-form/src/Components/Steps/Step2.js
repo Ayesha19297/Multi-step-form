@@ -28,6 +28,9 @@ const Step2 = ({ formData, errors, handleChange, nextStep, prevStep }) => {
             value={formData.address1}
             onChange={handleChange("address1")}
           />
+           {!/^[a-zA-Z0-9\s,.-]+$/.test(formData.address1) && formData.address1 && (
+          <small className="text-danger">Please enter a valid Address.</small>
+        )}
         </div>
         <div className="form-group">
           <label>Address Line 2:</label>
@@ -37,6 +40,9 @@ const Step2 = ({ formData, errors, handleChange, nextStep, prevStep }) => {
             value={formData.address2}
             onChange={handleChange("address2")}
           />
+           {!/^[a-zA-Z0-9\s,.-]+$/.test(formData.address2) && formData.address2 && (
+          <small className="text-danger">Please enter a valid Address.</small>
+        )}
         </div>
         <div className="form-group">
           <label>City:</label>
@@ -46,6 +52,9 @@ const Step2 = ({ formData, errors, handleChange, nextStep, prevStep }) => {
             value={formData.city}
             onChange={handleChange("city")}
           />
+          {!/^[a-zA-Z\s]+$/.test(formData.city) && formData.city && (
+          <small className="text-danger">Please enter a valid city name.</small>
+        )}
         </div>
         <div className="form-group">
           <label>State:</label>
@@ -55,6 +64,9 @@ const Step2 = ({ formData, errors, handleChange, nextStep, prevStep }) => {
             value={formData.state}
             onChange={handleChange("state")}
           />
+          {!/^[a-zA-Z\s]+$/.test(formData.state) && formData.state && (
+          <small className="text-danger">Please enter a valid State name.</small>
+        )}
         </div>
         <div className="form-group">
           <label>Zip Code:</label>

@@ -32,9 +32,14 @@ const MultiStepForm = () => {
     localStorage.setItem("formData", JSON.stringify(updatedFormData));
   };
 
+  const handleBlur = (input) => (e) => {
+    const trimmedValue = e.target.value.trim(); // Trim on blur
+    setFormData({ ...formData, [input]: trimmedValue });
+  };
+
   const handleFinish = (e) => {
     e.preventDefault();
-        alert("Form submitted successfully");
+    alert("Form submitted successfully");
     setFormData({
       name: "",
       email: "",
@@ -50,25 +55,21 @@ const MultiStepForm = () => {
   };
 
   const renderStepsIndicator = () => {
-    const steps = [
-      "personal info",
-      "Address info",
-      "Confirmation",
-    ];
+    const steps = ["personal info", "Address info", "Confirmation"];
     return (
-        <>
+      <>
         <h3>Fill in the details given below</h3>
-      <div className="steps-indicator">
-        {steps.map((title, index) => (
-          <div
-            key={index}
-            className={`step-item ${index + 1 === step ? "active" : ""}`}
-          >
-            <span className="step-number">{index + 1}</span>
-            <span className="step-title">{title}</span>
-          </div>
-        ))}
-      </div>
+        <div className="steps-indicator">
+          {steps.map((title, index) => (
+            <div
+              key={index}
+              className={`step-item ${index + 1 === step ? "active" : ""}`}
+            >
+              <span className="step-number">{index + 1}</span>
+              <span className="step-title">{title}</span>
+            </div>
+          ))}
+        </div>
       </>
     );
   };
@@ -82,6 +83,7 @@ const MultiStepForm = () => {
           <Step1
             formData={formData}
             handleChange={handleChange}
+            handleBlur={handleBlur}
             nextStep={nextStep}
           />
         )}
@@ -93,7 +95,13 @@ const MultiStepForm = () => {
             prevStep={prevStep}
           />
         )}
-        {step === 3 && <Step3 formData={formData} prevStep={prevStep} handleFinish={handleFinish} />}
+        {step === 3 && (
+          <Step3
+            formData={formData}
+            prevStep={prevStep}
+            handleFinish={handleFinish}
+          />
+        )}
       </div>
     </div>
   );
