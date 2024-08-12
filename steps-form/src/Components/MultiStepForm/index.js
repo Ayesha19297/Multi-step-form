@@ -51,9 +51,9 @@ const MultiStepForm = () => {
 
   const renderStepsIndicator = () => {
     const steps = [
-      "Basic details",
-      "Address details",
-      "Review and Save",
+      "personal info",
+      "Address info",
+      "Confirmation",
     ];
     return (
         <>
